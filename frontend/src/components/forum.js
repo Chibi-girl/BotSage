@@ -1,14 +1,31 @@
-import { useState } from 'react';
+import { useState,useEffect } from 'react';
 import ChatBot from './chatbot';
 import "./forum.css"
 
 
+
 export default function Forum() {
     const [open, setOpen] = useState(false);
+    const [threads,setThreads] =useState([]);
     function setOpenUtil()
     {
         return setOpen(!open);
     }
+    
+     useEffect(() => {
+     fetch("http://localhost:8080/getThreads")
+    .then((res) => res.json())
+    .then(
+      (result) => {
+			setThreads(result);
+      },
+      (error) => {
+
+	console.log(error);
+      }
+    )
+    }, []);
+    
     const data = [{
         title: "Title-1",
         text: "loywdgiwpigdpwgdi",

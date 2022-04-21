@@ -117,11 +117,11 @@ class ChatApp extends Component {
     if(current_message && enter){
     const requestOptions = {
         method: 'POST',
-        headers: { 'Authorization': 'EndpointKey 586cb32f-289c-4575-92cd-b50d38ea1cd4' , 'Content-type': 'application/json'},
+        headers: { 'Authorization': 'EndpointKey 586cb32f-289c-4575-92cd-b50d38ea1cd4' , 'Content-Type':'application/json'},
         body: JSON.stringify({ question: current_message })
     };
       messages = [...messages, {"message":current_message}];
-      fetch("https://qnabotsage.azurewebsites.net/qnamaker/knowledgebases/600df601-5597-4bc0-8dc2-f793b003a03e/generateAnswer" + current_message)
+      fetch("https://qnabotsage.azurewebsites.net/qnamaker/knowledgebases/600df601-5597-4bc0-8dc2-f793b003a03e/generateAnswer" ,requestOptions)
       .then(res => res.json())
       .then(
         (result) => {
