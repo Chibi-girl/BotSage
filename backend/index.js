@@ -25,6 +25,8 @@ const thread_mgmt_router = require("./thread_mgmt/routes");
 
 app.post("/loggingUser", auth_router);
 app.post("/registerUser", auth_router);
+
+app.get("/getThreads",thread_mgmt_router)
 app.post("/postThread",thread_mgmt_router);
 
 //app.use("/",subs_mgmt_router);

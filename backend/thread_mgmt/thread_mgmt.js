@@ -3,23 +3,18 @@ const dotenv = require('dotenv');
 dotenv.config();
 
 const threads = require("../models/thread_model.js");
-/*function intervalFunc() {
-    console.log("Hello!!!!");
-     }
-    setInterval(intervalFunc,1500);*/
 
 
 
 
 exports.getThreads = async (req, res) => {
-  var email = req.params.tags;
- users.findOne({ email: req.params.email }).then(
-    function (usr) {
-      if (usr === null) {
-          console.log("here");
-        res.status(404).send("User not found!");
+ threads.find({ }).then(
+    function (threads) {
+      if (threads === null) {
+          console.log("No threads found");
+        res.status(404).send("Thread not found!");
       } else {
-         res.status(200).send(usr);
+         res.status(200).send(threads);
       }
     },
     function (err) {
@@ -28,7 +23,7 @@ exports.getThreads = async (req, res) => {
     }
   )
   .catch((err) => {
-        res.status(404).send("Error getting subscription list");
+        res.status(404).send("Error getting thread list");
       });
 };
 
