@@ -5,7 +5,7 @@ import axios from "axios";
 import DailyIframe from "@daily-co/daily-js";
 
 import * as loading from "../../animations/loading.json";
-
+// import Content from "./home";
 import "./footer.css";
 import HomepageHeading from "./homepage_heading";
 import Navigation from "./navigation";
@@ -54,9 +54,10 @@ function Home(props) {
               inverted
               color="#4A5934"
               textAlign="center"
-              style={{ minHeight: 600, padding: "1em 0em" }}
+              style={{ minHeight: 600 }}
               vertical
             >
+            {/* navbar */}
               <div inverted color="black">
                 <div
                   stackable
@@ -72,6 +73,10 @@ function Home(props) {
                     parentCallback2={handleCallback}
                   />
                 </div>
+              </div>
+              <div className="nav-img-logo">
+              <img src="/images/navbar_logo.png" />
+
               </div>
               <HomepageHeading />
             </div>

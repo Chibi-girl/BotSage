@@ -3,13 +3,54 @@
   width: 100%;
   display: flex;
   align-items: center;
+  justify-content: space-around;
   position: relative;
-  padding: 0.5rem 0rem;
-  background-color: #fff;
-  color: black;
+  padding-bottom: 0.5rem;
+  background-color: #4D7811;
+  color: white;
   box-shadow: 0 2px 2px 2px rgba(9, 9, 9, 0.23);
 }
 
+.navigation a{
+  color: white;
+  font-size: 1.5em;
+  text-decoration: none;
+  font-family: 'Poppins';
+}
+
+.seg h2{
+  font-family: 'Poppins' !important;
+}
+.nav-img-logo{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+  z-index: 2;
+  height: 1em;
+}
+.nav-img-logo img{
+  margin-top: -6em;  
+  width: 20em;
+}
+.get-started-btn{
+  border: none;
+  font-size: 1.5em;
+  background-color:#F69127;
+  border-radius: 8px;
+  color: white;
+  padding: 0.8em 1.5em;    
+  font-weight: 600;
+  font-size: 1.5em;
+  margin-left: 0.5em;
+}
+.homepage-title-wrapper{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 0 20em;
+
+}
 .brand-name {
   text-decoration: none;
   color: black;

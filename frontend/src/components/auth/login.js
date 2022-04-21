@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 import { Button, Form, Message, Header } from "semantic-ui-react";
 
-import logo from "../../images/logo.jpg";
+// logo
 import userContext from "../../GlobalContext/userContext";
 import "./auth.css";
 
@@ -87,7 +87,7 @@ class Login extends Component {
       <div className="auth-main">
         <div class="auth-content">
           <div className="auth-card">
-            <img src={logo} alt="Logo" className="auth-logo" />
+            {/* <img src={logo} alt="Logo" className="auth-logo" /> */}
             <Header as="h2" color="black" textAlign="center">
               Login
             </Header>

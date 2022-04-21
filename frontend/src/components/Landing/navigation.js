@@ -82,18 +82,18 @@ function Navigation(props) {
   else
     return (
     <nav className="navigation">
-      <a href="/" className="brand-name">
+      {/* <a href="/" className="brand-name">
         BotSage
-      </a>
-      <button
+      </a> */}
+      {/* <button
         className="hamburger"
         onClick={() => {
           setIsNavExpanded(!isNavExpanded)
         }}
-      >
+      > */}
         {/* hamburger svg code... */}
-      </button>
-      <div
+      {/* </button> */}
+      {/* <div
         className={
           isNavExpanded ? "navigation-menu expanded" : "navigation-menu"
         }
@@ -106,7 +106,11 @@ function Navigation(props) {
             <a href="/forum">Forum</a>
           </li>
         </ul>
-      </div>
+      </div> */}
+      <a href="/forum">Forum</a>
+      <a href="/login">Login</a>
+     
+      
     </nav>
     );
 }
