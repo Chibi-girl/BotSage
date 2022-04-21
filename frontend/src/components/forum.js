@@ -1,3 +1,5 @@
+
+import ChatBot from './chatbot';
 import "./forum.css"
 
 export default function Forum() {
@@ -43,8 +45,21 @@ export default function Forum() {
             </div>
             <div className="forum-bot-wrapper">
                 BotSage
+               
             </div>
+            <ChatBot/>
         </div>
     )
 
 }
+
+
+// export default function Forum(){
+//     return(
+//         <div className="home-footer">
+        
+//     </div>
+//     )
+    
+
+
