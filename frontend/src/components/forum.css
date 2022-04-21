@@ -11,6 +11,8 @@
 }
 .forum-container{
     width: 100%;
+    height: 36em;
+    overflow-y: scroll;
     display: flex;
     flex-direction: column;
     align-items: center;

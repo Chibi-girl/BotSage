@@ -20,6 +20,18 @@ export default function Forum() {
     {
         title: "Title-3",
         text: "blah-2",
+    },
+    {
+        title: "Title-1",
+        text: "loywdgiwpigdpwgdi",
+    },
+    {
+        title: "Title-2",
+        text: "blah",
+    },
+    {
+        title: "Title-3",
+        text: "blah-2",
     }
 
     ]
