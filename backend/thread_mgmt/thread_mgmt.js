@@ -1,11 +1,8 @@
 const mongoose = require("mongoose");
 const dotenv = require('dotenv');
 dotenv.config();
-const accountSid = process.env.SID;
-const authToken = process.env.AUTH_TOKEN;
-const client = require('twilio')(accountSid, authToken);
 
-const users = require("../models/user_model.js");
+const threads = require("../models/thread_model.js");
 /*function intervalFunc() {
     console.log("Hello!!!!");
      }
@@ -14,8 +11,8 @@ const users = require("../models/user_model.js");
 
 
 
-exports.getSubs = async (req, res) => {
-  var email = req.params.email;
+exports.getThreads = async (req, res) => {
+  var email = req.params.tags;
  users.findOne({ email: req.params.email }).then(
     function (usr) {
       if (usr === null) {
@@ -34,6 +31,25 @@ exports.getSubs = async (req, res) => {
         res.status(404).send("Error getting subscription list");
       });
 };
+
+exports.postThread = async (req,res) => {
+
+obj={question: req.body.question , answers: req.body.answers , tags: req.body.tags };
+ let new_thread = new threads(obj);
+      if (!new_thread) {
+        return res.status(400).json({ success: false, error: "Schema failed" });
+      }
+      new_thread
+        .save()
+        .then(() => {
+          return res.status(201).send(new_thread);
+        })
+        .catch((error) => {
+          return res.status(404).send("Error in uploading discussion thread to database.");
+        });
+}
+
+
 
 exports.addSubs = async (req, res) => {
 const date = new Date(req.body.start);
