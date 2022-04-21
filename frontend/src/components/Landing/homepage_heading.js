@@ -5,17 +5,7 @@ import { Link } from "react-router-dom";
 const HomepageHeading = () => (
   <div className="homepage-title-wrapper">
   <div className="homepage-heading">
-    {/* <h1
-      content="BotSage"
-      // style={{
-      //   fontSize: "4em",
-      //   fontWeight: "normal",
-      //   marginBottom: 0,
-      //   marginTop: "1.8em",
-      // }}
-      >
-      BotSage
-    </h1> */}
+    {}
     <img src="/images/headingImage.png"/>
     <h2
       content="Your smart doubt-solving companion"

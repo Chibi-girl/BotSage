@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import './chatbot.css';
 import './static/css/chat_interface.css';
 import './static/css/temporary.css';
 
@@ -24,7 +23,7 @@ class MessageTextBoxContainer extends Component{
 class Avartar extends Component {
   render(){
     return(
-      <div className="avatar"/>
+      <img src="/images/BotImage.png" alt="Avatar" className="avatar"/>
     );
   }
 }
@@ -131,7 +130,7 @@ class ChatApp extends Component {
           });
         },
         (error) => {
-          //do nothing for now
+			console.log(error);
         }
       );
       current_message = ""

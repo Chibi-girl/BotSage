@@ -18,6 +18,7 @@ export default function Forum() {
     .then(
       (result) => {
 			setThreads(result);
+			console.log(threads);
       },
       (error) => {
 
@@ -69,21 +70,13 @@ export default function Forum() {
             {open && <ChatBot/>}
             <div className='forum-bot-wrapper' onClick={setOpenUtil}>
             <img src='/images/BotImage.png'/>
-            </div>
-
-            
+            </div>            
         </div>
     )
 
 }
 
 
-// export default function Forum(){
-//     return(
-//         <div className="home-footer">
-        
-//     </div>
-//     )
     
 
 

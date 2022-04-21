@@ -4,8 +4,6 @@ import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 
 import Home from "./components/Landing/home";
 import Error from "./components/ErrorPage/error";
-import Login from "./components/auth/login";
-import Signup from "./components/auth/signup";
 import Forum from "./components/forum";
 
 function App() {
@@ -15,8 +13,6 @@ function App() {
       <Router>
         <Switch>
           <Route exact path="/" component={() => <Home />} />
-          <Route exact path="/login" component={Login} />
-          <Route exact path="/signup" component={Signup} />
           <Route exact path="/forum" component={Forum} />
           <Route component={() => <Error />} />
         </Switch>
