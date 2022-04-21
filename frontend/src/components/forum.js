@@ -1,8 +1,14 @@
-
+import { useState } from 'react';
 import ChatBot from './chatbot';
 import "./forum.css"
 
+
 export default function Forum() {
+    const [open, setOpen] = useState(false);
+    function setOpenUtil()
+    {
+        return setOpen(!open);
+    }
     const data = [{
         title: "Title-1",
         text: "loywdgiwpigdpwgdi",
@@ -43,11 +49,12 @@ export default function Forum() {
                     })
                 }
             </div>
-            <div className="forum-bot-wrapper">
-                BotSage
-               
+            {open && <ChatBot/>}
+            <div className='forum-bot-wrapper' onClick={setOpenUtil}>
+            <img src='/images/BotImage.png'/>
             </div>
-            <ChatBot/>
+
+            
         </div>
     )
 

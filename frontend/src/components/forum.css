@@ -34,5 +34,16 @@
 }
 .forum-bot-wrapper{
     position: absolute;
-    bottom: 0;
+    bottom: -12em;
+    right: 2em;
+    width: 5em;
+    height: 5em;
+    background-color: #191c1c21;
+    box-shadow: 2px 2px 8px rgba(0,0,0, 0.25);
+    border-radius: 50%;
+    overflow: hidden;
+}
+.forum-bot-wrapper img{
+    height: 100%;
+    width: 100%;
 }
