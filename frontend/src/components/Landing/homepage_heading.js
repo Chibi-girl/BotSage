@@ -18,7 +18,7 @@ const HomepageHeading = () => (
     </h1> */}
     <img src="/images/headingImage.png"/>
     <h2
-      content="One stop solution for all your doubts"
+      content="Your smart doubt-solving companion"
       style={{
         fontSize: "2em",
         fontWeight: "normal",
@@ -26,7 +26,7 @@ const HomepageHeading = () => (
         marginLeft:"0.5em"
         
       }}
-    >One stop solution for all your doubts!</h2>
+    >Your smart doubt-solving companion</h2>
     <button className = "get-started-btn" as={Link} to="/signup">
       Get Started
       <icon name="right arrow" />
