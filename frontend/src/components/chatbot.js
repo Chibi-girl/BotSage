@@ -23,7 +23,9 @@ class MessageTextBoxContainer extends Component{
 class Avartar extends Component {
   render(){
     return(
-      <img src="/images/BotImage.png" alt="Avatar" className="avatar"/>
+
+     <div className='avatar'></div>
+
     );
   }
 }
