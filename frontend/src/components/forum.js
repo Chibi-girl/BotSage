@@ -5,8 +5,29 @@ import "./forum.css"
 
 
 export default function Forum() {
+    const data = [{
+        title: "Title -1",
+        text: "Text-1"
+    }, 
+    {
+        title: "Title -2",
+        text: "Text-2"
+    }, 
+    {
+        title: "Title -3",
+        text: "Text-3"
+    }, 
+    {
+        title: "Title -4",
+        text: "Text-4"
+    }, 
+    {
+        title: "Title -5",
+        text: "Text-5"
+    }
+]
     const [open, setOpen] = useState(false);
-    const [threads,setThreads] =useState([]);
+    const [threads,setThreads] =useState({});
     function setOpenUtil()
     {
         return setOpen(!open);
@@ -18,6 +39,9 @@ export default function Forum() {
     .then(
       (result) => {
 			setThreads(result);
+            console.log(threads);
+            data.push(threads);
+            
       },
       (error) => {
 
@@ -26,32 +50,7 @@ export default function Forum() {
     )
     }, []);
     
-    const data = [{
-        title: "Title-1",
-        text: "loywdgiwpigdpwgdi",
-    },
-    {
-        title: "Title-2",
-        text: "blah",
-    },
-    {
-        title: "Title-3",
-        text: "blah-2",
-    },
-    {
-        title: "Title-1",
-        text: "loywdgiwpigdpwgdi",
-    },
-    {
-        title: "Title-2",
-        text: "blah",
-    },
-    {
-        title: "Title-3",
-        text: "blah-2",
-    }
-
-    ]
+    
     return (
         <div className="forum-wrapper">
             <nav className="navigation">
