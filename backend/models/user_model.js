@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
-//Model for users to be stored in database
+//Model for user authentication to be stored in database
 const auths = new Schema(
   {
     username: { type: String },

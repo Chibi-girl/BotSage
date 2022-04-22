@@ -2,6 +2,7 @@ import React, { useEffect, useState, useCallback } from "react";
 import Lottie from "react-lottie";
 import { withRouter } from "react-router-dom";
 import axios from "axios";
+import Home from "./home";
 
 
 
@@ -39,7 +40,7 @@ function Home(props) {
           </div>
 
           {props.curr}
-		
+		<Home/>
 		<div class="footer-basic"  >
     	<footer>
             <div class="social"><a href="#"><i class="icon ion-social-instagram"></i></a><a href="#"><i class="icon ion-social-linkedin"></i></a><a href="#"><i class="icon ion-social-twitter"></i></a><a href="#"><i class="icon ion-social-facebook"></i></a></div>

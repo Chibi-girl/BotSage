@@ -9,6 +9,7 @@
     font-weight: 800;
     font-size: 4em;
 }
+
 .forum-container{
     width: 100%;
     display: flex;
@@ -23,6 +24,11 @@
     margin: 1em 0;
     background-color: #0000000d;
 }
+
+.forum-box-tags{
+	display: flex;
+}
+
 .forum-box-title{
     font-size: 2em;
     font-weight: 600;
@@ -34,10 +40,10 @@
 }
 .forum-bot-wrapper{
     position: absolute;
-    bottom: -12em;
+    bottom: 3em;
     right: 2em;
-    width: 5em;
-    height: 5em;
+    width: 7em;
+    height: 7em;
     background-color: #191c1c21;
     box-shadow: 2px 2px 8px rgba(0,0,0, 0.25);
     border-radius: 50%;

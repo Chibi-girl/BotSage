@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
-//Model for users to be stored in database
+//Model for discussion threads to be stored in database
 const doubts = new Schema(
   {
     question: { type: String },

@@ -6,7 +6,7 @@ const threads = require("../models/thread_model.js");
 
 
 
-
+//function for fetching all discussion threads from the database
 exports.getThreads = async (req, res) => {
  threads.find({ }).then(
     function (threads) {
@@ -27,8 +27,11 @@ exports.getThreads = async (req, res) => {
       });
 };
 
-exports.postThread = async (req,res) => {
 
+
+
+//function for adding a new thread to the database
+exports.postThread = async (req,res) => {
 obj={question: req.body.question , answers: req.body.answers , tags: req.body.tags };
  let new_thread = new threads(obj);
       if (!new_thread) {
@@ -44,89 +47,6 @@ obj={question: req.body.question , answers: req.body.answers , tags: req.body.ta
         });
 }
 
-
-
-exports.addSubs = async (req, res) => {
-const date = new Date(req.body.start);
-obj={subscription:req.body.subscription , start:date , renewal:req.body.renewal };
-users.findOneAndUpdate(
-        { email: req.body.email },
-        { $push: { subscriptions: obj}},
-        { useFindAndModify: false })
-      .then((data) => {
-        if (!data) {
-          res
-            .status(404)
-            .send("Cannot add subscription . Maybe user was not found!");
-        } else {
-        	console.log(data.phone);
-            var str='Deadline for '+obj.subscription+' subscription has approached!';
-          
-              client.messages
-              .create({
-                 body: str,
-                 from: '+19106598964',
-                 to: data.phone
-               })
-              .then(message => console.log(message.sid))
-              .catch(error=>console.log(error));
-              
-            
-          res.status(201).send(data);
-        }
-      })
-      .catch((err) => {
-        res.status(404).send("Error adding subscription");
-      });
-};
-
-
-
-exports.changeSubs = async(req,res) => {
-const oldstart = new Date(req.body.oldstart);
-const newstart = new Date(req.body.newstart);
-objold={subscription: req.body.oldsubscription , start:oldstart , renewal:req.body.oldrenewal };
-objnew={subscription: req.body.newsubscription , start:newstart , renewal:req.body.newrenewal };
-	users.findOneAndUpdate(
-        { email: req.body.email , subscriptions: objold },
-        { $set: { "subscriptions.$" : objnew } },
-        { useFindAndModify: false })
-      .then((data) => {
-        if (!data) {
-          res
-            .status(404)
-            .send("Cannot delete subscription ! User not found");
-        } else {
-          res.status(201).send(data);
-        }
-      })
-      .catch((err) => {
-        res.status(404).send("Error deleting subscription");
-      });
-
-};
-
-
-exports.deleteSubs = async (req,res) => {
-const date = new Date(req.body.start);
-obj={subscription:req.body.subscription , start:date , renewal:req.body.renewal };
-	users.findOneAndUpdate(
-        { email: req.body.email },
-        { $pull: { subscriptions: obj } },
-        { useFindAndModify: false })
-      .then((data) => {
-        if (!data) {
-          res
-            .status(404)
-            .send("Cannot delete subscription ! User not found");
-        } else {
-          res.status(201).send(data);
-        }
-      })
-      .catch((err) => {
-        res.status(404).send("Error deleting subscription");
-      });
-};
 
 
 

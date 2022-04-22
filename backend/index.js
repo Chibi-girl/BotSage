@@ -13,8 +13,6 @@ app.use(morgan("dev"));
 const db = require("./connection");
 
 
-
-
 //show message after connecting to cloud database
 db.once("open", () => console.log("Connected to db"));
 db.on("error", console.error.bind(console, "MongoDB connection error:"));
@@ -29,24 +27,6 @@ app.post("/registerUser", auth_router);
 app.get("/getThreads",thread_mgmt_router)
 app.post("/postThread",thread_mgmt_router);
 
-//app.use("/",subs_mgmt_router);
-// Set public folder as root
-/*
-app.use(express.static("public"));
-
-// Provide access to node_modules folder from the client-side
-app.use("/scripts", express.static(`${__dirname}/node_modules/`));
-
-
-app.use("/", room_router);
-
-app.get("/", (_, res) => {
-  res.status(200).send("Hello from the profile backend!");
-});
-
-// Redirect all traffic to index.html
-app.use((req, res) => res.sendFile(`${__dirname}/frontend/public/index.html`));
-*/
 app.get('/', (_, res) => {
     res.status(200).send('Hello from the profile backend!')
 })

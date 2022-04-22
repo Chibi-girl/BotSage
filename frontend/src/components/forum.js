@@ -52,14 +52,18 @@ export default function Forum() {
             </div>
             <div className="forum-container">
                 {
-                    data.map((item, i) => {
+                    threads.map((item, i) => {
                         return (
                             <div className="forum-box">
+                            <h5><b>Tags:</b></h5>
+                            <div className="forum-box-tags" >
+                            	{item.tags.map(tag => <p style={{"margin-right":"10px"}}>{tag}</p>)}
+                            </div>
                                 <div className="forum-box-title">
-                                    {item.title}
+                                    {item.question}
                                 </div> 
                                 <div className="forum-box-text">
-                                    {item.text}
+                                    {item.answers}
                                 </div>
 
                             </div>

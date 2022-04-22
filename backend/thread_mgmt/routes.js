@@ -5,6 +5,8 @@ const router = express.Router();
 
 router.get("/getThreads", thread_mgmt.getThreads);
 router.post("/postThread", thread_mgmt.postThread);
+
+//endpoints to be implemented
 //router.post("/addTag", thread_mgmt.addTag);
 //router.post("/deleteTag", thread_mgmt.deleteTag);
 //router.post("/addanswer", thread_mgmt.addAnswer);

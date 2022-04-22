@@ -2,12 +2,10 @@ const mongoose = require("mongoose");
 const dotenv = require('dotenv');
 dotenv.config();
 
-//const fetch = require("node-fetch"); node fetch can't be used with require, use got or axios or smth else
 const auths = require("../models/user_model.js");
 
 //logging in user with the credentials provided. If email is not found or password of document mismatches, send error message
 exports.loggingUser = async (req, res) => {
-    //if user is logging in
     let password = req.body.password;
     auths
             .findOne(
@@ -19,7 +17,6 @@ exports.loggingUser = async (req, res) => {
                   .status(404)
                   .send("User was not found/ invalid password!");
               } else {
-                // console.log(data);
                 res.status(200).send(data);
               }
             })
