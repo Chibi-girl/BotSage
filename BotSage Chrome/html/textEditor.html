@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BotSage - Finalise your Discussion Thread</title>
+    <link rel="stylesheet" href="../css/confirmDialog.css" />
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  </head>
+  <body>
+ 
+    <div id="content" class="content">
+      <div>
+        <h1>Meeting Text</h1>
+        <textarea
+          id="meetingText"
+          placeholder="(Meeting text will appear here)"
+        ></textarea>
+      </div>
+      <form id="submit-meeting-details" class="right-content">
+        <p>
+          Add Discussion Tags
+          <input
+            id="tags"
+            type="text"
+            name="discussion tags"
+            placeholder="e.g. Physics"
+          />
+        </p>
+        <button type="submit" id="addTag">
+		<i class="fa fa-plus"></i>
+        </button>
+        <button type="submit" id="submitThread">Submit Thread</button>
+        <p id="error"></p>
+      </form>
+      <div>    
+  <ul id="tagList">
+  </ul>
+          
+</div>
+    </div>
+    <script src="../javascript/textEditor.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+  </body>
+</html>

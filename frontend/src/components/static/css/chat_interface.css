@@ -73,7 +73,7 @@ body {
   opacity: 0;
 }
 .messages .message.left .avatar {
-  background-color: #f5886e;
+  background-color: #DCD5CC;
   float: left;
 }
 .messages .message.left .text_wrapper {

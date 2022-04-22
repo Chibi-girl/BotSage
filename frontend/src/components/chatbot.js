@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import './chatbot.css';
 import './static/css/chat_interface.css';
 import './static/css/temporary.css';
 
@@ -24,7 +23,8 @@ class MessageTextBoxContainer extends Component{
 class Avartar extends Component {
   render(){
     return(
-      <div className="avatar"/>
+      <div className='avatar'></div>
+      // <img src="" alt="Avatar" className="avatar"/>
     );
   }
 }
@@ -121,7 +121,7 @@ class ChatApp extends Component {
         body: JSON.stringify({ question: current_message })
     };
       messages = [...messages, {"message":current_message}];
-      fetch("https://qnabotsage.azurewebsites.net/qnamaker/knowledgebases/600df601-5597-4bc0-8dc2-f793b003a03e/generateAnswer" ,requestOptions)
+      fetch("https://qnabotsage.azurewebsites.net/qnamaker/knowledgebases/de4666a8-4c8b-4cf1-92bd-fb4196944197/generateAnswer" ,requestOptions)
       .then(res => res.json())
       .then(
         (result) => {
@@ -131,7 +131,7 @@ class ChatApp extends Component {
           });
         },
         (error) => {
-          //do nothing for now
+			console.log(error);
         }
       );
       current_message = ""

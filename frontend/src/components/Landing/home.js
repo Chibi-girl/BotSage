@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { withRouter } from "react-router-dom";
-import CommonPage from "./commonpage";
+import Layout from "./layout";
 import "./home.css";
 
 function Home() {
@@ -20,7 +20,7 @@ function Home() {
     img: "Image-3.png"
   }
   ];
-  // // component to be rendered when user is in home page
+  // component to be rendered when user is in home page
   const home = (
     <div className='information-wrapper'>
       <div className='information-title'>
@@ -45,22 +45,14 @@ function Home() {
           )
         })
       }
-
-
     </div>
-
   )
 
 
   return (
-    <CommonPage curr={home} active="home" />
+    <Layout />
   );
-
-
-
 }
-
-
 
 
 
